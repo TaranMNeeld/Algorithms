@@ -16,12 +16,9 @@ def find_max_profit(prices):
             highest_price = prices[j]
 
             profit = highest_price - lowest_price
-            print(f'{highest_price} - {lowest_price}')
             if profit > max_profit:
                 max_profit = profit
-            print(f'profit:{profit}')
 
-    print(f'max_profit:{max_profit}')
     return max_profit
 
 
