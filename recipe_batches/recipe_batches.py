@@ -2,39 +2,24 @@
 
 
 def recipe_batches(recipe, ingredients):
-
-    # Grab the names of the ingredients
     recipe_ingredients = recipe.keys()
-
-    # Set batches to 0
     batches = 0
-
     # Loop until function finds that there aren't enough ingredients
     while 1 == 1:
-
-        # Loop through ingredients
         for recipe_key in recipe_ingredients:
-
             # Print message if an ingredient does not exist in ingredients dictionary
             try:
-
                 # Test if there is required amount of current ingredient
                 if ingredients[recipe_key] >= recipe[recipe_key]:
-
                     # Subtract required ingredient quantity from current ingredient dictionary value
                     ingredients[recipe_key] -= recipe[recipe_key]
-
                 # Return current amount of batches if there is not enough of current ingredient
                 else:
                     print(f'Not enough {recipe_key}')
                     return batches
-
-            # Print message if an ingredient does not exist in ingredients dictionary
             except KeyError:
                 print(f'No {recipe_key} in available ingredients')
                 return 0
-
-        # Add 1 to batches if there was enough of every ingredient
         batches += 1
 
 
